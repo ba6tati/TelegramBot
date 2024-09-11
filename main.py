@@ -46,11 +46,13 @@ if __name__ == '__main__':
     application = ApplicationBuilder().token(os.environ.get("BOT_TOKEN")).build()
     
     start_handler = CommandHandler('start', start)
+    help_handler = CommandHandler('help', help_)
     ping_handler = CommandHandler('ping', ping)
     caps_handler = CommandHandler('caps', caps)
     dice_handler = CommandHandler('dice', dice)
     
     application.add_handler(start_handler)
+    application.add_handler(help_handler)
     application.add_handler(ping_handler)
     application.add_handler(caps_handler)
     application.add_handler(dice_handler)
