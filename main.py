@@ -40,7 +40,7 @@ async def dice(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await context.bot.send_message(chat_id=update.effective_chat.id, text=random.randint(1, 6))
     
 async def help_(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await context.send_message(chat_id=update.effective_chat.id, text=help_txt)
+    await context.bot.send_message(chat_id=update.effective_chat.id, text=help_txt)
 
 if __name__ == '__main__':
     application = ApplicationBuilder().token(os.environ.get("BOT_TOKEN")).build()
