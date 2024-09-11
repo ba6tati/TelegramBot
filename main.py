@@ -12,6 +12,9 @@ logging.basicConfig(
     level=logging.INFO
 )
 
+with open('HELP.txt') as f:
+    help_txt = f.read()
+
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     
     keyboard = [
@@ -35,6 +38,9 @@ async def caps(update: Update, context: ContextTypes.DEFAULT_TYPE):
     
 async def dice(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await context.bot.send_message(chat_id=update.effective_chat.id, text=random.randint(1, 6))
+    
+async def help_(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    await context.send_message(chat_id=update.effective_chat.id, text=help_txt)
 
 if __name__ == '__main__':
     application = ApplicationBuilder().token(os.environ.get("BOT_TOKEN")).build()

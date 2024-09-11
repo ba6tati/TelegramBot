@@ -1,0 +1,5 @@
+/start - starts the bot
+/help - returns all commands
+/caps - returns the provided message in all caps
+/dice - returns random number between 1 and 6
+/ping - returns pong
